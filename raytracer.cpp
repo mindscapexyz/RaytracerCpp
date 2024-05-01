@@ -33,21 +33,40 @@ class Sphere {
             double t0 = -b-disc;
             double t1 = -b+disc;
 
-            return 
+            t = (t0 < t1) ? t0 : t1;
+            return true;
+
         }
     }
+}
+
+struct Color {
+    double r,g,b;
+    Color(){r=g=b=0;}
+    Color(double i, double j, double k){r=i,g=j,b=k;}
 }
 
 int main(){
     const int W{500};
     const int H{500};
 
+    Color pixel_col[H][W];
+
+    Color white(255,255,255);
+    Sphere sphere(Vec(W/2, H/2, 50), 20, white);
+
+
     for(int y= 0; y<H; y++){
         for(int x=0; x<W; x++){
             // Send ray through each pixel
             Ray ray(Vec(x,y,0), Vec(0,0,1));
 
+            double t = 20000;
+
             // Check for intersections
+            if(sphere.intersect(ray, t)){
+                // Color the pixel
+            }
 
         }
     }
