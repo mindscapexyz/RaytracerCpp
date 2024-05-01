@@ -12,6 +12,10 @@ class Ray{
     Ray(Vec i, Vec j){o=i,d=j;}
 };
 
+double  dot(Vec v, Vec b){
+    return (v.x*b.x+v.y*b.y+v.z*b.z);
+}
+
 class Sphere {
     Vec c;
     double r;
@@ -21,6 +25,16 @@ class Sphere {
         Vec d = ray.d;
         Vec oc = o-c;
         double b = 2*dot(oc,d);
+        double c = dot(oc, oc)-r*r;
+        double disc = b*b-4*c;
+        if(disc<0) return false;
+        else{
+            disc = sqrt(disc);
+            double t0 = -b-disc;
+            double t1 = -b+disc;
+
+            return 
+        }
     }
 }
 
