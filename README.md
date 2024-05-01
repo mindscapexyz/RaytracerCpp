@@ -1,6 +1,6 @@
 # Basic raytracer
 
-A good exercise to deal with programming logic with vector applications
+A good exercise to deal with vector applications
 
 To compile the program, make sure g++ is available in your pc. Then run:
 
